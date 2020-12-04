@@ -382,3 +382,53 @@ export default Usuarios
 ```
 
 Basicamente iniciamos o _state_ `usuarios` com um _array_ vazio. No próximo passo vamos popular esse _state_ com o _array_ de usuários recebido do nosso backend.
+
+
+**6.2. useEffect e Fetch API**
+
+Assim que a página for acessada, vamos capturar os dados da nossa 'API' através de um `fetch` e atualizar nosso _state_ `usuarios`. Para evitarmos um _loop_ infinito - ou seja, para carregarmos esses usuários apenas uma vez - vamos passar um _array_ vazio de dependências do `useEffect`. O React deverá disparar um alerta, pedindo que passe as dependências ou remova o _array_ - pode ignorar esse aviso.
+
+Dentro do nosso `useEffect` basicamente vamos consumir o _endpoint_ `api/usuarios` (graças ao `proxy` configurado no _package.json_ do app `client` não precisamos passar o caminho inteiro). De forma resumida, receberemos nossa _response_ (`res`), transformamos a _response_ num JSON e passamos como valor do nosso _state_ `usuarios`. Nosso código ficará assim:
+
+```js
+import React, { useState, useEffect } from 'react'
+import './style.css'
+
+const Usuarios = () => {
+  const [usuarios, setUsuarios] = useState([])
+
+  useEffect(() => {
+    fetch('/api/usuarios')
+      .then(res => res.json())
+      .then(json => setUsuarios(json))
+      .catch(err => console.error(err))
+  }, [])
+
+  return (
+    <section>
+      <h2>Usuários</h2>
+      <ul>
+        <li>#ID | Nome Sobrenome</li>
+        <li>#ID | Nome Sobrenome</li>
+        <li>#ID | Nome Sobrenome</li>
+        <li>#ID | Nome Sobrenome</li>
+      </ul>
+    </section>
+  )
+}
+
+export default Usuarios
+```
+
+Você pode acrescentar um _callback_ ao _fetch_ para visualizar os usuários no _console_:
+
+```js
+useEffect(() => {
+  fetch('/api/usuarios')
+    .then(res => res.json())
+    .then(json => setUsuarios(json), console.log(usuarios))
+    .catch(err => console.error(err))
+}, [])
+```
+
+Dica: estamos usando o `catch` para capturarmos e podermos visualizar possíveis erros que ocorram na nossa requisição.
