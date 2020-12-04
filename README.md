@@ -485,4 +485,4 @@ Também precisaremos adicionar mais um _script_, de nome 'dev':
 
 Esse segundo script usa o _package_ 'concurrently' (que nos permite rodar comandos simultaneamente). O _script_ 'dev' nada mais faz do que executar ambos os scripts que criamos, 'client' e 'server'.
 
-Agora basta executarmos `npm run dev` em um único terminal e teremos ambos os _scripts_ rodando simultaneamente! Para validar o correto funcionamento, abra 2 abas em seu navegador, uma em `localhost:5000` (_node_) e outra em `localhost:3000` (_react_).
+Agora basta executarmos `npm run dev` em um único terminal e teremos ambos os _scripts_ rodando simultaneamente! Para validar o correto funcionamento, abra 2 abas em seu navegador, uma em `localhost:5000/api/usuarios` (_node_) e outra em `localhost:3000` (_react_).
