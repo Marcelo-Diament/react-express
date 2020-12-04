@@ -383,7 +383,6 @@ export default Usuarios
 
 Basicamente iniciamos o _state_ `usuarios` com um _array_ vazio. No próximo passo vamos popular esse _state_ com o _array_ de usuários recebido do nosso backend.
 
-
 **6.2. useEffect e Fetch API**
 
 Assim que a página for acessada, vamos capturar os dados da nossa 'API' através de um `fetch` e atualizar nosso _state_ `usuarios`. Para evitarmos um _loop_ infinito - ou seja, para carregarmos esses usuários apenas uma vez - vamos passar um _array_ vazio de dependências do `useEffect`. O React deverá disparar um alerta, pedindo que passe as dependências ou remova o _array_ - pode ignorar esse aviso.
@@ -432,3 +431,22 @@ useEffect(() => {
 ```
 
 Dica: estamos usando o `catch` para capturarmos e podermos visualizar possíveis erros que ocorram na nossa requisição.
+
+**6.3. Renderizando os Usuários**
+
+Resta apenas exibirmos esses usuários na nossa tela. Faremos isso através de um `map()`. Nosso `return` ficará assim:
+
+```js
+return (
+  <section>
+    <h2>Usuários</h2>
+    <ul>
+      {usuarios.map(usuario => (
+        <li key={usuario.id}>#{usuario.id} | {usuario.nome} {usuario.sobrenome}</li>
+      ))}
+    </ul>
+  </section>
+)
+```
+
+Importante: precisamos passar o atributo `key` (corresponde ao `id` do HTML) para a `<li></li>` para que cada uma delas seja única.
