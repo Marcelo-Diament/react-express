@@ -18,7 +18,9 @@ Esse repositório visa demonstrar uma forma fácil de 'integrar' uma aplicação
 
 Aqui vamos entender como replicar a solução, ao invés de simplesmente usar esse repositório. Para isso, dividiremos esse tutorial num passo a passo simples. O fluxo do projeto - _giitflow_ - também respeitará esses mesmos passos através da criação de _branches_, _commits_ e _pull requests_ (PRs).
 
-### Passo 1 | Criando um projeto
+### Passo 1 | Criando o Projeto
+
+_Branch: [feature/01-init-projeto]_
 
 Após criarmos o diretório (pasta) do nosso projeto, executaremos o código `npm init` para criarmos um arquivo _package.json_, no qual salvaremos nossos _scripts_, dependências e outras informações acerca do projeto. Isso pode ser feito através da sua IDE de prefência, do terminal ou do próprio sistema operacional que estiver usando (como Explorer do usuário Windows ou Finder no caso do usuário Mac).
 
@@ -88,6 +90,8 @@ Nosso arquivo _package.json_ final ficará semelhante ao seguinte:
 
 ### Passo 2 | Instalando as Dependências
 
+_Branch: [feature/01-init-projeto]_
+
 Agora vamos deixar nossas dependências instaladas, no caso o Express e o Concurrently (e o Nodemon como uma dependência de desenvolvimento).
 
 **2.1. Instalando dependências**
@@ -110,7 +114,11 @@ npm i nodemon --save-dev
 
 O trecho `--save-dev` é quem instrui que essa dependência seja salva em `devDependencies` no nosso _package.json_.
 
-**2.3. Definindo _scripts_**
+### Passo 3 | Definindo Scripts
+
+_Branch: [feature/01-init-projeto]_
+
+**3.1. Definindo _scripts_**
 
 Por fim, vamos definir alguns _scripts_ em nosso _package.json_ (e remover o _script_ de testes):
 
