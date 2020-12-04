@@ -97,3 +97,16 @@ Vamos instalar tanto o Express quanto o Concurrently com um só comando:
 ```sh
 npm i express concurrently
 ```
+
+_Não se preocupe se perceber que seu repositório/projeto tem uma pasta a mais em relação ao repositório. Isso é por que a pasta `node_modules` está sendo ignorada, através do arquivo `.gitignore` (e assim deve ser, pois nela estão de fato as dependências do projeto - mas já deixamos o registro das mesmas no `package.json`, logo não precisamos incluí-las no repositório)._
+
+**2.2 Instalando dependências de desenvolvimento**
+
+Agora instalaremos o _nodemon_, que nos poupa de derrubarmos e levantarmos o servidor a todo momento (pois ele fica 'olhando', 'observando' as atualizações do código e já dá um _refresh_ automaticamente no _server_). Para isso, basta rodar o seguinte código no terminal:
+
+```sh
+npm i nodemon --save-dev
+```
+
+O trecho `--save-dev` é quem instrui que essa dependência seja salva em `devDependencies` no nosso _package.json_.
+
