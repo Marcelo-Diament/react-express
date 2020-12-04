@@ -456,7 +456,6 @@ Se preferir, pode escrever seu `map` assim também:
 ```
 Importante: precisamos passar o atributo `key` (corresponde ao `id` do HTML) para a `<li></li>` para que cada uma delas seja única.
 
-
 ### Passo 7 | Unificando os Terminais com Concurrently
 
 _Branch: [feature/05-unificando-terminais]_
@@ -486,3 +485,15 @@ Também precisaremos adicionar mais um _script_, de nome 'dev':
 Esse segundo script usa o _package_ 'concurrently' (que nos permite rodar comandos simultaneamente). O _script_ 'dev' nada mais faz do que executar ambos os scripts que criamos, 'client' e 'server'.
 
 Agora basta executarmos `npm run dev` em um único terminal e teremos ambos os _scripts_ rodando simultaneamente! Para validar o correto funcionamento, abra 2 abas em seu navegador, uma em `localhost:5000/api/usuarios` (_node_) e outra em `localhost:3000` (_react_).
+
+### Passo 8 | Facilitando a Instalação desse Repo
+
+_Branch: [feature/06-easy-client-install]_
+
+Como um bônus para essa prática, vamos criar um último _script_, que tem como objetivo facilitar a instalação das dependências do app React (sem termos de acessar o diretório `client` pelo terminal). Simplesmente passaremos essa responsabilidade para o script `client-install` através do 'package.json' da raíz do nosso projeto. Para isso, adicionaremos o seguinte _script_:
+
+```sh
+"client-install": "cd client && npm install"
+```
+
+Simples assim! Agora, ao baixarmos/clonarmos o repositório, basta rodarmos `npm run client-install` a partir da raíz do projeto e as dependências serão devidamente instaladas! =)
