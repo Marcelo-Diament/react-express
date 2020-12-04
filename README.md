@@ -250,3 +250,18 @@ Basta executarmos o _script_ que criamos com o comando `npm run server` e acessa
 
 Dica: instale a extensão 'JSON Viewer' no navegador para ver os arquivos do tipo JSON formatados. =)
 
+
+### Passo 5 | Criando o 'Frontend'
+
+_Branch: [feature/03-frontend]_
+
+Vamos criar agora o nosso 'frontend' usando o pacote `create-react-app`. Novamente será um exemplo bastante simples, apenas para fins de demonstração. Sem mais delongas... mãos à obra!
+
+**5.1. Criando o Front**
+
+Bom, começaremos pela criação do nosso app React. Então precisamos rodar o seguinte comando (considerando que o nome do projeto - dentro do nosso projeto 'macro' - será `client`):
+
+```sh
+npx create-react-app client
+```
+
