@@ -311,7 +311,7 @@ const Usuarios = () => {
 export default Usuarios
 ```
 
-E o nosso estilo inicial (bem básico), assim:
+E o nosso estilo inicial (bem básico) - `./client/src/components/Usuarios/style.css` -, assim:
 
 ``` css
 section {
@@ -331,4 +331,21 @@ ul {
 li {
     line-height: 32px;
 }
+```
+
+Por fim, precisamos importar o componente Usuarios no nosso `App.js` (vamos aproveitar para limpar o restante do conteúdo do `App.js`). Ficará assim:
+
+```js
+import './App.css';
+import Usuarios from './components/Usuarios';
+
+function App() {
+  return (
+    <div className="App">
+      <Usuarios />
+    </div>
+  );
+}
+
+export default App;
 ```
