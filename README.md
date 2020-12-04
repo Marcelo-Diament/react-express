@@ -265,3 +265,12 @@ Bom, começaremos pela criação do nosso app React. Então precisamos rodar o s
 npx create-react-app client
 ```
 
+**5.2. Definindo a proxy**
+
+Esse é um dos 'pulos do gato' - vamos definir uma `proxy` para podermos realizar um `fetch` com uma URL relativa, ou seja, poderemos simplesmente passar `/api/usuarios` no momento de consumirmos nosso backend.
+
+Para definirmos essa `proxy` tudo o que precisamos fazer é adicionar essa propriedade ao _package.json_ do nosso app react e passar o endereço e porta do nosso backend (`http://localhost:5000`):
+
+```json
+"proxy": "http://localhost:5000"
+```
