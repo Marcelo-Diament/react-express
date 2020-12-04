@@ -449,4 +449,9 @@ return (
 )
 ```
 
+Se preferir, pode escrever seu `map` assim também:
+
+```js
+{usuarios.map(usuario => <li key={usuario.id}>#{usuario.id} | {usuario.nome} {usuario.sobrenome}</li>)}
+```
 Importante: precisamos passar o atributo `key` (corresponde ao `id` do HTML) para a `<li></li>` para que cada uma delas seja única.
