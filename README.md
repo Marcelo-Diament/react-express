@@ -280,3 +280,9 @@ Para definirmos essa `proxy` tudo o que precisamos fazer é adicionar essa propr
 Vamos 'rodar' nosso servidor React em um novo terminal. Para isso precisamos acessar o projeto React - `cd client` - e rodar o projeto - `yarn start` ou `npm start`.
 
 Agora é só acessar _localhost:3000_ no _browser_ para visualizarmos nosso app React. Perceba que temos dois _servers_ rodando simultaneamente (o `node` na porta 5000 e o `react` na porta 3000).
+
+**5.4. Componente Usuarios**
+
+Uma vez que nosso app _client_ está rodando corretamente, vamos criar um componente Usuarios. Esse componente terá como responsabilidade listar os usuários capturados através do backend.
+
+Basicamente vamos criar um arquivo `index.js` para o componente e outro arquivo `style.css` para o respectivo estilo. Esses arquivos deverão ser criados na pasta `./client/src/components/Usuarios`.
