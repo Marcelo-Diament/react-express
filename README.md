@@ -455,3 +455,34 @@ Se preferir, pode escrever seu `map` assim também:
 {usuarios.map(usuario => <li key={usuario.id}>#{usuario.id} | {usuario.nome} {usuario.sobrenome}</li>)}
 ```
 Importante: precisamos passar o atributo `key` (corresponde ao `id` do HTML) para a `<li></li>` para que cada uma delas seja única.
+
+
+### Passo 7 | Unificando os Terminais com Concurrently
+
+_Branch: [feature/05-unificando-terminais]_
+
+Chegou a hora de amarrarmos tudo! Até o momento estávamos trabalhando com dois terminais abertos (no mínimo), um para o servidor React e outro para o Node. Através do Concurrently, agora poderemos usar um único terminal. E podemos fazer isso de maneira super simples.
+
+**7.1. Atualizando o _./package.json_**
+
+**Script client**
+
+Vamos adicionar um novo _script_ chamado 'client' ao nosso `package.json` da raíz do projeto:
+
+```sh
+"client": "npm start --prefix client"
+```
+
+Esse _script_ basicamente acessa a pasta `./client` e executa `npm start`. Outra maneira seria declararmos `cd client && npm start`.
+
+**Script dev**
+
+Também precisaremos adicionar mais um _script_, de nome 'dev':
+
+```sh
+"dev": "concurrently \"npm run server\" \"npm run client\""
+```
+
+Esse segundo script usa o _package_ 'concurrently' (que nos permite rodar comandos simultaneamente). O _script_ 'dev' nada mais faz do que executar ambos os scripts que criamos, 'client' e 'server'.
+
+Agora basta executarmos `npm run dev` em um único terminal e teremos ambos os _scripts_ rodando simultaneamente! Para validar o correto funcionamento, abra 2 abas em seu navegador, uma em `localhost:5000` (_node_) e outra em `localhost:3000` (_react_).
