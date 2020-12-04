@@ -32,7 +32,7 @@ Vamos ver como faríamos via terminal (a partir da pasta onde quer criar o proje
 mkdir NomeDoProjeto
 ```
 
-**1.2. Acessando essa pasta com o comando '_change directory_', o famoso `cd`**
+**1.2. Acessando essa pasta com o comando '_change directory_' (o famoso `cd` )**
 
 ``` sh
 cd NomeDoProjeto
@@ -98,17 +98,17 @@ Agora vamos deixar nossas dependências instaladas, no caso o Express e o Concur
 
 Vamos instalar tanto o Express quanto o Concurrently com um só comando:
 
-```sh
+``` sh
 npm i express concurrently
 ```
 
-_Não se preocupe se perceber que seu repositório/projeto tem uma pasta a mais em relação ao repositório. Isso é por que a pasta `node_modules` está sendo ignorada, através do arquivo `.gitignore` (e assim deve ser, pois nela estão de fato as dependências do projeto - mas já deixamos o registro das mesmas no `package.json`, logo não precisamos incluí-las no repositório)._
+_Não se preocupe se perceber que seu repositório/projeto tem uma pasta a mais em relação ao repositório. Isso é por que a pasta `node_modules` está sendo ignorada, através do arquivo `.gitignore` (e assim deve ser, pois nela estão de fato as dependências do projeto - mas já deixamos o registro das mesmas no `package.json` , logo não precisamos incluí-las no repositório)._
 
 **2.2 Instalando dependências de desenvolvimento**
 
 Agora instalaremos o _nodemon_, que nos poupa de derrubarmos e levantarmos o servidor a todo momento (pois ele fica 'olhando', 'observando' as atualizações do código e já dá um _refresh_ automaticamente no _server_). Para isso, basta rodar o seguinte código no terminal:
 
-```sh
+``` sh
 npm i nodemon --save-dev
 ```
 
@@ -179,6 +179,65 @@ Chegou a hora de criarmos nosso 'backend'. Repare que será um 'backend' muito s
 
 Basicamente vamos criar um arquivo chamado `server.js` (que indicamos como `entry-point` no momento de iniciarmos o projeto). Podemos fazer isso através da IDE, pelo próprio computador (Explorer/Finder) ou pelo terminal, executando o seguinte comando:
 
-```sh
+``` sh
 touch server.js && code server.js
+```
+
+**4.2. Configurando o _server.js_**
+
+Precisamos configurar nosso _server_. Basicamente vamos chamar o `Express` , definir uma porta e solicitar que essa porta seja 'escutada'. Vamos dividir cada linha do _server.js_ para que fique bem claro o que estamos fazendo.
+
+* Instanciando o _express_:
+
+``` js
+const express = require('express')
+```
+
+* Inicializando o _express_:
+
+``` js
+const app = express()
+```
+
+* Definindo uma porta:
+
+``` js
+const port = 5000
+```
+
+_Não vamos usar a porta 3000 pois será utilizada pelo React._
+
+* Criando uma rota '_api/usuarios_', definindo um _array_ de usuários e retornando nossa _response_ com esses usuários em JSON:
+
+``` js
+app.get('/api/usuarios', (req, res) => {
+    const usuarios = [{
+            id: 1,
+            nome: "Fulano",
+            sobrenome: "da Silva"
+        },
+        {
+            id: 2,
+            nome: "Ciclano",
+            sobrenome: "Reis"
+        },
+        {
+            id: 3,
+            nome: "Beltrano",
+            sobrenome: "Santos"
+        },
+        {
+            id: 4,
+            nome: "Abirosvaldo",
+            sobrenome: "Oswaldo Junior"
+        }
+    ]
+    res.json(usuarios)
+})
+```
+
+* Escutando a porta e confirmando a execução do servidor:
+
+``` js
+app.listen(port, () => console.log(`Servidor executando na porta ${port}`)
 ```
