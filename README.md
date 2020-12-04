@@ -241,3 +241,12 @@ _Não vamos usar a porta 3000 pois será utilizada pelo React._
 ``` js
 app.listen(port, () => console.log(`Servidor executando na porta ${port}`))
 ```
+
+**4.3. Testando o _server.js_**
+
+Vamos ver como ficou?
+
+Basta executarmos o _script_ que criamos com o comando `npm run server` e acessarmos a [rota que criamos](http://localhost:5000/api/usuarios) através do _browser_ (navegador) de nossa preferência.
+
+Dica: instale a extensão 'JSON Viewer' no navegador para ver os arquivos do tipo JSON formatados. =)
+
