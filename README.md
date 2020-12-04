@@ -168,3 +168,17 @@ Usaremos esses scripts mais adiante. Com isso finalizamos mais um passo do nosso
 }
 
 ```
+
+### Passo 4 | Criando o 'Backend'
+
+_Branch: [feature/02-backend]_
+
+Chegou a hora de criarmos nosso 'backend'. Repare que será um 'backend' muito simples (mesmo), afinal a intenção dessa prática é apenas mostrar como podemos integrar o React.js com o node.js. Para criarmos nosso 'backend' usaremos o Express, um _mini-framework_ que nos ajuda a configurar nosso servidor de maneira mais simples. Vamos lá!
+
+**4.1. Criando o _server.js_**
+
+Basicamente vamos criar um arquivo chamado `server.js` (que indicamos como `entry-point` no momento de iniciarmos o projeto). Podemos fazer isso através da IDE, pelo próprio computador (Explorer/Finder) ou pelo terminal, executando o seguinte comando:
+
+```sh
+touch server.js && code server.js
+```
