@@ -6,8 +6,8 @@ Esse repositório visa demonstrar uma forma fácil de 'integrar' uma aplicação
 
 ## Tecnologias
 
-| Tecnologia   | Uso      | Download | Documentação                                                                                                         |
-| ------------ | -------- | ----------- | ----------------------------------------------------------------------------------------------------------------- |
+| Tecnologia   | Uso      | Download                                              | Documentação                                                            |
+| ------------ | -------- | ----------------------------------------------------- | ----------------------------------------------------------------------- |
 | React.js     | Frontend | [npm](https://www.npmjs.com/package/create-react-app) | [reactjs.org](https://pt-br.reactjs.org/)                               |
 | node.js      | Backend  | [nodejs](https://nodejs.org/en/download/)             | [nodejs.org](https://nodejs.org/)                                       |
 | Express.js   | Backend  | [npm](https://www.npmjs.com/package/express)          | [expressjs.com](https://expressjs.com/)                                 |
