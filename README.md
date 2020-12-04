@@ -250,18 +250,17 @@ Basta executarmos o _script_ que criamos com o comando `npm run server` e acessa
 
 Dica: instale a extensão 'JSON Viewer' no navegador para ver os arquivos do tipo JSON formatados. =)
 
-
 ### Passo 5 | Criando o 'Frontend'
 
 _Branch: [feature/03-frontend]_
 
-Vamos criar agora o nosso 'frontend' usando o pacote `create-react-app`. Novamente será um exemplo bastante simples, apenas para fins de demonstração. Sem mais delongas... mãos à obra!
+Vamos criar agora o nosso 'frontend' usando o pacote `create-react-app` . Novamente será um exemplo bastante simples, apenas para fins de demonstração. Sem mais delongas... mãos à obra!
 
 **5.1. Criando o Front**
 
-Bom, começaremos pela criação do nosso app React. Então precisamos rodar o seguinte comando (considerando que o nome do projeto - dentro do nosso projeto 'macro' - será `client`):
+Bom, começaremos pela criação do nosso app React. Então precisamos rodar o seguinte comando (considerando que o nome do projeto - dentro do nosso projeto 'macro' - será `client` ):
 
-```sh
+``` sh
 npx create-react-app client
 ```
 
@@ -269,15 +268,15 @@ npx create-react-app client
 
 Esse é um dos 'pulos do gato' - vamos definir uma `proxy` para podermos realizar um `fetch` com uma URL relativa, ou seja, poderemos simplesmente passar `/api/usuarios` no momento de consumirmos nosso backend.
 
-Para definirmos essa `proxy` tudo o que precisamos fazer é adicionar essa propriedade ao _package.json_ do nosso app react e passar o endereço e porta do nosso backend (`http://localhost:5000`):
+Para definirmos essa `proxy` tudo o que precisamos fazer é adicionar essa propriedade ao _package.json_ do nosso app react e passar o endereço e porta do nosso backend ( `http://localhost:5000` ):
 
-```json
+``` json
 "proxy": "http://localhost:5000"
 ```
 
 **5.3. Executando o React**
 
-Vamos 'rodar' nosso servidor React em um novo terminal. Para isso precisamos acessar o projeto React - `cd client` - e rodar o projeto - `yarn start` ou `npm start`.
+Vamos 'rodar' nosso servidor React em um novo terminal. Para isso precisamos acessar o projeto React - `cd client` - e rodar o projeto - `yarn start` ou `npm start` .
 
 Agora é só acessar _localhost:3000_ no _browser_ para visualizarmos nosso app React. Perceba que temos dois _servers_ rodando simultaneamente (o `node` na porta 5000 e o `react` na porta 3000).
 
@@ -285,4 +284,51 @@ Agora é só acessar _localhost:3000_ no _browser_ para visualizarmos nosso app 
 
 Uma vez que nosso app _client_ está rodando corretamente, vamos criar um componente Usuarios. Esse componente terá como responsabilidade listar os usuários capturados através do backend.
 
-Basicamente vamos criar um arquivo `index.js` para o componente e outro arquivo `style.css` para o respectivo estilo. Esses arquivos deverão ser criados na pasta `./client/src/components/Usuarios`.
+Basicamente vamos criar um arquivo `index.js` para o componente e outro arquivo `style.css` para o respectivo estilo. Esses arquivos deverão ser criados na pasta `./client/src/components/Usuarios` .
+
+Nosso arquivo `./client/src/components/Usuarios/index.js` inicial ficará assim:
+
+``` js
+import React from 'react'
+import './style.css'
+
+const Usuarios = () => {
+    return ( <
+        section >
+        <
+        h2 > Usuários < /h2> <
+        ul >
+        <
+        li > #ID | Nome Sobrenome < /li> <
+        li > #ID | Nome Sobrenome < /li> <
+        li > #ID | Nome Sobrenome < /li> <
+        li > #ID | Nome Sobrenome < /li> <
+        /ul> <
+        /section>
+    )
+}
+
+export default Usuarios
+```
+
+E o nosso estilo inicial (bem básico), assim:
+
+``` css
+section {
+    background-color: #ccc;
+    border: 1px solid #0bf;
+    border-radius: 16px;
+    margin: 32px auto;
+    padding: 32px;
+    width: 50vw;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    line-height: 32px;
+}
+```
