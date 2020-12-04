@@ -110,3 +110,53 @@ npm i nodemon --save-dev
 
 O trecho `--save-dev` é quem instrui que essa dependência seja salva em `devDependencies` no nosso _package.json_.
 
+**2.3. Definindo _scripts_**
+
+Por fim, vamos definir alguns _scripts_ em nosso _package.json_ (e remover o _script_ de testes):
+
+``` json
+"start": "node server.js",
+"server": "nodemon server.js"
+```
+
+Usaremos esses scripts mais adiante. Com isso finalizamos mais um passo do nosso tutorial! Veja como ficou nosso _package.json_ ao final desses passos:
+
+``` json
+{
+  "name": "react-express",
+  "version": "1.0.0",
+  "description": "Integração simples do React.js com o node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcelo-Diament/react-express.git"
+  },
+  "keywords": [
+    "reactjs",
+    "nodejs",
+    "expressjs",
+    "concurrently",
+    "nodemon",
+    "frontend",
+    "backend"
+  ],
+  "author": "Marcelo Diament",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Marcelo-Diament/react-express/issues"
+  },
+  "homepage": "https://github.com/Marcelo-Diament/react-express#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
+
+```
