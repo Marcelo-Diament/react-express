@@ -347,3 +347,38 @@ function App() {
 
 export default App;
 ```
+
+### Passo 6 | Consumindo dados do Backend no Frontend
+
+_Branch: [feature/04-consumindo-back-no-front]_
+
+Chegou o momento mais esperado! Vamos consumir o conteúdo passado pelo backend (na _response_ da rota `/api/usuarios`) no frontend (no nosso componente Usuarios).
+
+**6.1. useState**
+
+Vamos começar importando o _hook_ `useState`, de forma a armazenarmos os usuários que receberemos:
+
+```js
+import React, { useState, useEffect } from 'react'
+import './style.css'
+
+const Usuarios = () => {
+  const [usuarios, setUsuarios] = useState([])
+
+  return (
+    <section>
+      <h2>Usuários</h2>
+      <ul>
+        <li>#ID | Nome Sobrenome</li>
+        <li>#ID | Nome Sobrenome</li>
+        <li>#ID | Nome Sobrenome</li>
+        <li>#ID | Nome Sobrenome</li>
+      </ul>
+    </section>
+  )
+}
+
+export default Usuarios
+```
+
+Basicamente iniciamos o _state_ `usuarios` com um _array_ vazio. No próximo passo vamos popular esse _state_ com o _array_ de usuários recebido do nosso backend.
