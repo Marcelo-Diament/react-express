@@ -199,14 +199,6 @@ const express = require('express')
 const app = express()
 ```
 
-* Definindo uma porta:
-
-``` js
-const port = 5000
-```
-
-_Não vamos usar a porta 3000 pois será utilizada pelo React._
-
 * Criando uma rota '_api/usuarios_', definindo um _array_ de usuários e retornando nossa _response_ com esses usuários em JSON:
 
 ``` js
@@ -236,8 +228,16 @@ app.get('/api/usuarios', (req, res) => {
 })
 ```
 
+* Definindo uma porta:
+
+``` js
+const port = 5000
+```
+
+_Não vamos usar a porta 3000 pois será utilizada pelo React._
+
 * Escutando a porta e confirmando a execução do servidor:
 
 ``` js
-app.listen(port, () => console.log(`Servidor executando na porta ${port}`)
+app.listen(port, () => console.log(`Servidor executando na porta ${port}`))
 ```
