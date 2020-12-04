@@ -24,31 +24,31 @@ Após criarmos o diretório (pasta) do nosso projeto, executaremos o código `np
 
 Vamos ver como faríamos via terminal (a partir da pasta onde quer criar o projeto):
 
-**1. Criando a pasta do nosso projeto**
+**1.1. Criando a pasta do nosso projeto**
 
 ``` sh
 mkdir NomeDoProjeto
 ```
 
-**2. Acessando essa pasta com o comando '_change directory_', o famoso `cd` **
+**1.2. Acessando essa pasta com o comando '_change directory_', o famoso `cd`**
 
 ``` sh
 cd NomeDoProjeto
 ```
 
-**3. Abrindo o projeto na nossa IDE de preferência**
+**1.3. Abrindo o projeto na nossa IDE de preferência**
 
 ``` sh
 code .
 ```
 
-**4. Iniciando nosso projeto**
+**1.4. Iniciando nosso projeto**
 
 ``` sh
 npm init
 ```
 
-**5. Definindo parâmetros iniciais do nosso _package.json_**
+**1.5. Definindo parâmetros iniciais do nosso _package.json_**
 
 Nesse caso basta preencher as informações solicitadas ou apertar 'Enter' para acatar as sugestões exibidas. No tópico _entry point_, podemos definir o nome `server.js` . No mais, fique à vontade para definir seus próprios valores.
 
@@ -84,4 +84,16 @@ Nosso arquivo _package.json_ final ficará semelhante ao seguinte:
   "homepage": "https://github.com/Marcelo-Diament/react-express#readme"
 }
 
+```
+
+### Passo 2 | Instalando as Dependências
+
+Agora vamos deixar nossas dependências instaladas, no caso o Express e o Concurrently (e o Nodemon como uma dependência de desenvolvimento).
+
+**2.1. Instalando dependências**
+
+Vamos instalar tanto o Express quanto o Concurrently com um só comando:
+
+```sh
+npm i express concurrently
 ```
