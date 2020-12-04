@@ -274,3 +274,9 @@ Para definirmos essa `proxy` tudo o que precisamos fazer é adicionar essa propr
 ```json
 "proxy": "http://localhost:5000"
 ```
+
+**5.3. Executando o React**
+
+Vamos 'rodar' nosso servidor React em um novo terminal. Para isso precisamos acessar o projeto React - `cd client` - e rodar o projeto - `yarn start` ou `npm start`.
+
+Agora é só acessar _localhost:3000_ no _browser_ para visualizarmos nosso app React. Perceba que temos dois _servers_ rodando simultaneamente (o `node` na porta 5000 e o `react` na porta 3000).
